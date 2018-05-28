@@ -1,3 +1,5 @@
+var cards = document.querySelector('.cards')
+
 //Создаем ф-цию для получения данных локально
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
@@ -13,40 +15,55 @@ function readTextFile(file, callback) {
 
 //используем ф-цию
 readTextFile("data.json", function(text) {
-            var data = JSON.parse(text);
-
-            for (var i in data.events) {
-                var nums = i;
-
-                //Создаем карточки городов и назначаем им css-классы
-                var card = document.createElement('div');
-                var id = document.createElement('p');
-                var region = document.createElement('p');
-                var city = document.createElement('p');
-                var category = document.createElement('p');
-
-                card.classList.add('card');
-                id.classList.add('id');
-                region.classList.add('region');
-                city.classList.add('city');
-                category.classList.add('category');
-                //Наполняем карточки данными из JSON-a
-                id.innerHTML = "ID:" + nums;
-                region.innerHTML = "Область: " + data.events[i].region;
-                city.innerHTML = "Город: " + data.events[i].city;
-                category.innerHTML = "Категория: " + data.events[i].category;
-                //Вставляем данные в карточку
-                card.appendChild(id);
-                card.appendChild(region);
-                card.appendChild(city);
-                card.appendChild(category);
+    var data = JSON.parse(text);
 
 
-                // Вставляем карточки с данными в HTML
-                document.querySelector('.cards').appendChild(card);
-                // Фильтрация карточек по выбору пользователя
-                var selected = function(e) {
-                    var target = e.target;
-                    if (target.tagname != 'OPTION') return;
-                    console.log(target)
-                }
+    for (var i in data.events) {
+        var nums = i;
+
+        //Создаем карточки городов и назначаем им css-классы
+        var card = document.createElement('div');
+        var id = document.createElement('p');
+        var region = document.createElement('p');
+        var city = document.createElement('p');
+        var category = document.createElement('p');
+
+        card.classList.add('card');
+        id.classList.add('id');
+        region.classList.add('region');
+        city.classList.add('city');
+        category.classList.add('category');
+        //Наполняем карточки данными из JSON-a
+        id.innerHTML = "ID:" + nums;
+        region.innerHTML = "Область: " + data.events[i].region;
+        city.innerHTML = "Город: " + data.events[i].city;
+        category.innerHTML = "Категория: " + data.events[i].category;
+        //Вставляем данные в карточку
+        card.appendChild(id);
+        card.appendChild(region);
+        card.appendChild(city);
+        card.appendChild(category);
+
+
+        // Вставляем карточки с данными в HTML
+
+        cards.appendChild(card);
+
+    }
+})
+
+// Фильтрация карточек по выбору пользователя
+var region_select = document.querySelector('.region_select');
+var select_value;
+var card_region = document.querySelectorAll('p.region');
+
+region_select.onchange = function(e) {
+    select_value = e.target.value;
+    renderFromJSON(select_value);
+}
+
+var renderFromJSON = function(select_value) {
+    select_value === "1" ?
+        (cards.innerHTML = "asd") :
+        select_value === "2" ? (cards.innerHTML = "232") : (cards.innerHTML = "43424");
+};
