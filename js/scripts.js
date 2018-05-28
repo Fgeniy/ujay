@@ -16,6 +16,26 @@ function readTextFile(file, callback) {
 //используем ф-цию
 readTextFile("data.json", function(text) {
     var data = JSON.parse(text);
+    // Фильтрация карточек по выбору пользователя
+    var region_select = document.querySelector('.region_select');
+    var card_region = document.querySelectorAll('p.region');
+    var select_value;
+
+    region_select.onchange = function(e) {
+        select_value = e.target.value;
+        renderFromJSON(select_value);
+    }
+
+    var renderFromJSON = function(select_value) {
+
+        if (select_value === "1") {
+            data = _.filter(data.events, function(o) {
+                return o.region == 'Днепропетровск';
+
+            })
+        }
+
+    };
 
 
     for (var i in data.events) {
@@ -49,21 +69,7 @@ readTextFile("data.json", function(text) {
 
         cards.appendChild(card);
 
+
     }
+
 })
-
-// Фильтрация карточек по выбору пользователя
-var region_select = document.querySelector('.region_select');
-var select_value;
-var card_region = document.querySelectorAll('p.region');
-
-region_select.onchange = function(e) {
-    select_value = e.target.value;
-    renderFromJSON(select_value);
-}
-
-var renderFromJSON = function(select_value) {
-    select_value === "1" ?
-        (cards.innerHTML = "asd") :
-        select_value === "2" ? (cards.innerHTML = "232") : (cards.innerHTML = "43424");
-};
