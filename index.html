@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="prefetch" as="font" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <ul class="header_nav">
+                <li class="logo_box">
+                    <div class="logo"></div>
+                </li>
+                <li><a href="#" class="nav_link">главная</a></li>
+                <li> <a href="#" class="nav_link">О нас</a></li>
+                <li><a href="#" class="nav_link">организации</a></li>
+                <li class="action_box">
+                    <a class="action_link" href="#"><img src="icons/calendar_icon.svg" alt=""></a>
+                    <a class="action_link" href="#"><img src="icons/search_icon.svg" alt=""></a>
+                    <a class="action_link" href="#"><img src="icons/login_icon.svg" alt=""></a>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <div class="filter_block">
+        <div class="container row">
+            <form class="filter_block__form" action="" method="POST">
+                <select class="region_select">
+                    <option value="all_regions">Все области</option>
+                    <option value="Днепр">Днепр</option>
+                    <option value="Одесса">Одесса</option>
+                </select>
+            </form>
+            <form class="filter_block__form" action="" method="POST">
+                <select class="city_select">
+                        <option value="all_cities">Все города</option>
+                        <option value="Днепр">Днепр</option>
+                        <option value="Днепродзержинск">Днепродзержинск</option>
+                        <option value="Измаил">Измаил</option>
+                        <option value="Одесса">Одесса</option>
+                        <option value="Павлоград">Павлоград</option>
+                        <option value="Черноморск">Черноморск </option>
+                     
+                </select>
+            </form>
+            <form class="filter_block__form" action="" method="POST">
+                <select>
+                     <option value="all_categories">Все категории</option>
+                     <option value="Trip">Поход</option>
+                     <option value="Camp">Лагерь</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <div class="cards container row wrap">
+
+    </div>
+    <footer>
+        <div class="container row" style="justify-content: space-between;">
+            <div class="address_box">
+                <div>
+                    <div class="logo"></div>
+                    <p>Название огранизации</p>
+                </div>
+                <p>Украина, 49000, г. Днепр,<br> ЕКЦ «Менора», оф. 1212 <br> ул. Шолом-Алейхема, 4/26</p>
+            </div>
+            <div class="contacts_box">
+                <p><b>Контакты:</b></p>
+                <p>с мобильного: 000 <br> с домашнего: 0 000 000 000 <br> E-mail
+                </p>
+            </div>
+            <div class="footer_menu">
+                <ul>
+                    <li><a class="footer_menu__link" href="#">Главная</a></li>
+                    <li><a class="footer_menu__link" href="#">События</a></li>
+                    <li><a class="footer_menu__link" href="#">Организации</a></li>
+                </ul>
+            </div>
+            <div class="subscribe_box">
+                <div class="social_btns">
+                    <a href="#"><img src="icons/twitter.svg" alt=""></a>
+                    <a href="#"><img src="icons/facebook.svg" alt=""></a>
+                    <a href="#"><img src="icons/instagram.svg" alt=""></a>
+                </div>
+                <form action="">
+                    <p> <span class="email">E-mail:</span>
+                        <input type="email" name="Email"></p>
+                    <p><input type="submit" value="" name="Submit"></p>
+                </form>
+                <p class="footer_rigths"> © All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html
